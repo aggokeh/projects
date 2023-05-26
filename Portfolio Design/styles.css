@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap");
+
+/***************************/
+/*GENERAL PURPOSES SECTION*/
+/***************************/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #090909;
+  --secondary-color: #ffe8cc;
+}
+
+.html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto Mono", sans-serif;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  line-height: 1;
+}
+
+/***************************/
+/*HERO SECTION*/
+/***************************/
+
+.section-hero {
+  padding: 2.4rem 9.6rem 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8rem;
+  position: relative;
+}
+
+.quote span.cursor.typing {
+  animation: none;
+}
+
+.name {
+  margin-top: 7rem;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #dd7732;
+}
+
+.quote {
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+.name-text {
+  color: #dd7732;
+}
+
+.typed-text {
+  color: #dd7732;
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  background-color: var(--secondary-color);
+  margin-left: 0.1rem;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    background-color: var(--secondary-color);
+  }
+  49% {
+    background-color: var(--secondary-color);
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: var(--secondary-color);
+  }
+}
+
+.scroll-btn {
+  height: 3.5rem;
+  width: 2rem;
+  border: 1px solid #dd7732;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-bottom: 2rem;
+  transform: translateX(-50%);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.scroll-btn::before,
+.scroll-btn::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -100%) rotate(45deg);
+  height: 10px;
+  width: 10px;
+  border: 1px solid #dd7732;
+  border-top: transparent;
+  border-left: transparent;
+  animation: scroll-btn ease-in-out 2s infinite;
+}
+
+.scroll-btn::after {
+  top: 30%;
+  animation-delay: 0.3s;
+}
+
+@keyframes scroll-btn {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 90%;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 2s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate(0);
+  transition: all 2s;
+}
+
+#mom-1,
+#mom-2,
+#mom-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 9.6rem;
+  min-height: 100vh;
+  padding: 2.4rem;
+  margin-top: 5rem;
+}
+
+/***************************/
+/*DARK MODE SECTION*/
+/***************************/
+
+.light-mode-icon {
+  position: absolute;
+  height: 2rem;
+  top: 48%;
+  right: 0;
+  cursor: pointer;
+  color: #dd7732;
+}
+
+.light-mode {
+  --primary-color: #fff4e6;
+  --secondary-color: #090909;
+}
+
+.hidden-svg {
+  display: none;
+}
+
+.svg-name {
+  height: 5rem;
+}
+
+/***************************/
+/*NAVIGATION SECTION*/
+/***************************/
+
+.nav-container {
+  position: absolute;
+  top: 10%;
+  left: -10%;
+}
+
+.navigation {
+  position: relative;
+  width: 220px;
+  height: 482px;
+  transition: all 0.5s;
+}
+
+.navigation.active {
+  width: 95px;
+}
+
+.navigation ul {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 5rem;
+  list-style: none;
+  border: 1px solid #dd7732;
+  border-radius: 11px;
+}
+
+.navigation ul li a {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  padding: 11px;
+  text-decoration: none;
+  color: rgb(221, 119, 50);
+}
+
+.navigation ul li a:hover {
+  background: -webkit-linear-gradient(
+    left,
+    rgba(221, 119, 50, 1),
+    rgba(255, 0, 0, 0)
+  );
+  border-radius: 11px;
+  color: #ffe8cc;
+}
+
+.icon {
+  height: 1.5rem;
+}
+
+.nav-text {
+  font-size: 1.3rem;
+  white-space: nowrap;
+}
+
+.nav-toggle {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background-color: #dd7732;
+  border: 5px solid #090909;
+  border-radius: 100%;
+  top: 48%;
+  right: -20%;
+  transform: translateY(-20%);
+  cursor: pointer;
+}
+
+.nav-toggle::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M8.25 4.5l7.5 7.5-7.5 7.5' /%3E%3C/svg%3E%0A");
+  font-family: "Roboto Mono", sans-serif;
+  line-height: 30px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+.nav-toggle.active::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M15.75 19.5L8.25 12l7.5-7.5' /%3E%3C/svg%3E%0A");
+}
+
+.hidden-text {
+  display: none;
+}
+
+.light-border {
+  border: 5px solid #ffe8cc;
+}
